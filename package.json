@@ -4,7 +4,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {    
-    "start": "concurrently \"node server.js\""
+    "start": "node main.js"
   },
   "author": "",
   "license": "ISC",
