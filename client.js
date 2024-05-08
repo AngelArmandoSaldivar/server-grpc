@@ -12,7 +12,7 @@ const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
 const CustomerService  = grpc.loadPackageDefinition(packageDefinition).CustomerService;
 
 const client = new CustomerService (
-    'https://35.196.182.196:30043',
+    'localhost:30043',
     grpc.credentials.createInsecure()
 )
 

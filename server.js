@@ -88,11 +88,11 @@ server.addService(userProto.CustomerService.service, {
 });
 
 
-server.bindAsync('35.196.182.196:30043', grpc.ServerCredentials.createInsecure(), (err) => {
+server.bindAsync('localhost:30043', grpc.ServerCredentials.createInsecure(), (err) => {
     if(err) {
         console.log("ERROR: " + err);
     } else {
         //server.start();
-        console.log("Listen on port https://35.196.182.196:30043");
+        console.log("Listen on port localhost:30043");
     }
 });
