@@ -88,11 +88,11 @@ server.addService(userProto.CustomerService.service, {
 });
 
 
-server.bindAsync('127.0.0.1:30043', grpc.ServerCredentials.createInsecure(), (err) => {
+server.bindAsync('test-grpc-10f7aeb8bec5.herokuapp.com:30043', grpc.ServerCredentials.createInsecure(), (err) => {
     if(err) {
         console.log("ERROR: " + err);
     } else {
         //server.start();
-        console.log("Listen on port 127.0.0.1:30043");
+        console.log("Listen on port test-grpc-10f7aeb8bec5.herokuapp.com:30043");
     }
 });
