@@ -50,6 +50,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const client = require('./client.js')
 
+app.get('', (req, res) => {
+    res.send("Hola mundo");
+})
+
 app.get('/saludo', (req, res) => {    
 
     client.GetAll(null, (err, data) => {
