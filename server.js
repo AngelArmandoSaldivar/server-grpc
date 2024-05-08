@@ -1,7 +1,7 @@
 const PROTO_PATH = './proto/user.proto';
-import grpc from '@grpc/grpc-js';
-import protoLoader from '@grpc/proto-loader';
-import { v4 as uuidv4} from 'uuid';
+const grpc = require('@grpc/grpc-js');
+const protoLoader = require('@grpc/proto-loader');
+const { v4, uuidv4} = require('uuid');
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
     keepCase: true,
@@ -88,11 +88,11 @@ server.addService(userProto.CustomerService.service, {
 });
 
 
-server.bindAsync('test-grpc-10f7aeb8bec5.herokuapp.com:30043', grpc.ServerCredentials.createInsecure(), (err) => {
+server.bindAsync('localhost:30043', grpc.ServerCredentials.createInsecure(), (err) => {
     if(err) {
         console.log("ERROR: " + err);
     } else {
         //server.start();
-        console.log("Listen on port test-grpc-10f7aeb8bec5.herokuapp.com:30043");
+        console.log("Listen on port localhost:30043");
     }
 });

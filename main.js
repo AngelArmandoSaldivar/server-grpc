@@ -48,10 +48,21 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const client = require('./client.js')
 
-app.get('/saludo', (req, res) => {
+app.get('/saludo', (req, res) => {    
 
-    res.send("HOLA MUNDO");
+    client.GetAll(null, (err, data) => {
+        if (!err) {
+            console.log("DATA: " + JSON.stringify(data));
+            res.send(data);
+        } else {
+            console.log("ERROR: " + err);
+            res.status(500).send({
+                msg: "Error"
+            });
+        }
+    });
     
 });
 
