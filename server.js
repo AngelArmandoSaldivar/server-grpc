@@ -103,7 +103,7 @@ function SayHello(call, callback) {
 function main() {
   const server = new grpc.Server();
   server.addService(exampleProto.HelloGrpc.service, { SayHello: SayHello });
-  server.bindAsync('localhost:12345', grpc.ServerCredentials.createInsecure(), () => {
+  server.bindAsync('localhost:50051', grpc.ServerCredentials.createInsecure(), () => {
     console.log('Server running at http://0.0.0.0:50051');
     server.start();
   });
