@@ -1,9 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "main.js",
+  "main": "server.js",
   "scripts": {    
-    "start": "concurrently \"node server.js\" \"node main.js\""
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
