@@ -1,8 +1,10 @@
 # Usa una imagen base de Node.js
-FROM node:latest
+FROM node:14
 
 # Establece el directorio de trabajo en /app
 WORKDIR /app
+
+ENV HOST 0.0.0.0
 
 # Copia el package.json y el package-lock.json a /app
 COPY package*.json ./
@@ -17,4 +19,4 @@ COPY . .
 EXPOSE 50051
 
 # Ejecuta el servidor gRPC cuando se inicie el contenedor
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
